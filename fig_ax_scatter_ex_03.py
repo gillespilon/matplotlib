@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 """
-Create a simple scatter plot with adjustments.
+Create side-by-side scatter plots.
+Add labels, titles to Figure, Axes.
 """
 
 import matplotlib.pyplot as plt
