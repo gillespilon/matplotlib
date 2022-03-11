@@ -45,8 +45,8 @@ def main():
     )
     # add average line
     ax1.axhline(
-        y=sample_one['y'].mean(), color='#ff0000', linestyle='-', linewidth=1,
-        label='ave'
+        y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
+        linestyle='-', linewidth=1, label='ave'
     )
     # add legend to ax1
     # ax1.legend(['one', 'ave'])
@@ -58,8 +58,8 @@ def main():
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
     # add average line
     ax2.axhline(
-        y=sample_two['y'].mean(), color='#ff0000', linestyle='-', linewidth=1,
-        label='ave'
+        y=sample_two['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
+        linestyle='-', linewidth=1, label='ave'
     )
     # add legend to ax2
     ax2.legend(frameon=False, loc='best')
