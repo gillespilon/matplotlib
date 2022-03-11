@@ -5,6 +5,7 @@ Add labels, titles to Figure, Axes.
 Add lines for averages.
 """
 
+from matplotlib.ticker import MultipleLocator
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -40,7 +41,7 @@ def main():
         t='Scatter plots for two samples', fontweight='bold', fontsize=14
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
-    ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None',)
+    ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     # add Axes title
     ax1.set_title(label='Sample one', fontweight='bold', fontsize=12)
     # add y axis title
@@ -54,6 +55,9 @@ def main():
         y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
         linestyle='-', linewidth=1, label='ave'
     )
+    # set tick spacing
+    ax1.xaxis.set_major_locator(MultipleLocator(base=5))
+    ax1.yaxis.set_major_locator(MultipleLocator(base=2))
     # add legend to ax1
     # ax1.legend(['one', 'ave'])
     ax1.legend(frameon=False, loc='best')
@@ -75,4 +79,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
