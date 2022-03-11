@@ -55,9 +55,10 @@ def main():
         y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
         linestyle='-', linewidth=1, label='ave'
     )
-    # set tick spacing
+    # set tick spacing, argument is int or float
     ax1.xaxis.set_major_locator(MultipleLocator(base=5))
     ax1.yaxis.set_major_locator(MultipleLocator(base=2))
+    # to set the format of the tick labels, use set_major_formatter
     # add legend to ax1
     # ax1.legend(['one', 'ave'])
     ax1.legend(frameon=False, loc='best')
