@@ -29,9 +29,7 @@ def main():
     sample_one = df[df['x'] == 1]
     sample_two = df[df['x'] == 2]
     # create Figure, Axes objects
-    fig, (ax1, ax2) = plt.subplots(
-        nrows=1, ncols=2, sharex=True, sharey=True, layout='tight'
-    )
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # remove two spines
     for spine in 'right', 'top':
         ax1.spines[spine].set_visible(False)
@@ -74,6 +72,8 @@ def main():
     )
     # add legend to ax2
     ax2.legend(frameon=False, loc='best')
+    # adjust the padding between and around subplots
+    fig.tight_layout()
     # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_04.svg", format="svg")
 
