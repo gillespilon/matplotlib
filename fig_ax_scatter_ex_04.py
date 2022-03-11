@@ -17,6 +17,12 @@ def main():
             36, 29, 32, 31
         ]
     }
+    # apply style sheet
+    # https://matplotlib.org/stable/gallery/style_sheets/\
+    #    style_sheets_reference.html
+    # print(plt.style.available)
+    plt.style.use('fivethirtyeight')
+    # plt.style.use('ggplot')
     # create DataFrames
     df = pd.DataFrame(data=data)
     sample_one = df[df['x'] == 1]
