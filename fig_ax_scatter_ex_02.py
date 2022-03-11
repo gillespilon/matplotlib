@@ -21,11 +21,13 @@ def main():
     sample_two = df[df['x'] == 2]
     # create Figure, Axes objects
     fig, (ax1, ax2) = plt.subplots(
-        nrows=1, ncols=2, sharex=True, sharey=True, layout='tight'
+        nrows=1, ncols=2, sharex=True, sharey=True
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
+    # adjust the padding between and around subplots
+    fig.tight_layout()
     # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_02.svg", format="svg")
 
