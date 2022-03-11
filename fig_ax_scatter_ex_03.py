@@ -21,9 +21,7 @@ def main():
     sample_one = df[df['x'] == 1]
     sample_two = df[df['x'] == 2]
     # create Figure, Axes objects
-    fig, (ax1, ax2) = plt.subplots(
-        nrows=1, ncols=2, sharex=True, sharey=True, layout='tight'
-    )
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # remove two spines
     for spine in 'right', 'top':
         ax1.spines[spine].set_visible(False)
@@ -47,10 +45,11 @@ def main():
         xlabel='Sample no. within sample two', fontweight='bold', fontsize=10
     )
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
+    # adjust the padding between and around subplots
+    fig.tight_layout()
     # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_03.svg", format="svg")
 
 
 if __name__ == '__main__':
     main()
-
