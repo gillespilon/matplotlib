@@ -55,6 +55,9 @@ def main():
     ax.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
     # save image as file
     fig.tight_layout()
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.savefig
+    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_05.svg", format="svg")
 
 
