@@ -252,7 +252,7 @@ def plot_line_two_subplots(
     fmt = mdates.AutoDateFormatter(loc)
     ax1 = fig.add_subplot(121)
     ax1.xaxis.set_major_locator(locator=loc)
-    ax1.xaxis.set_major_formatter(fmt)
+    ax1.xaxis.set_major_formatter(formatter=fmt)
     fig.autofmt_xdate()
     ax1.plot(
         dataframe[columnx],
@@ -279,7 +279,7 @@ def plot_line_two_subplots(
     )
     ax2 = fig.add_subplot(122)
     ax2.xaxis.set_major_locator(locator=loc)
-    ax2.xaxis.set_major_formatter(fmt)
+    ax2.xaxis.set_major_formatter(formatter=fmt)
     fig.autofmt_xdate()
     ax2.plot(
         dataframe[columnx],
