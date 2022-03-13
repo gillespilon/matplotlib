@@ -79,6 +79,8 @@ def main():
     # add legend to ax2
     ax2.legend(frameon=False, loc='best')
     # adjust the padding between and around subplots
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
