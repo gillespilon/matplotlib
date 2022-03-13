@@ -42,6 +42,9 @@ def main():
         color=color_y1
     )
     # add Axes title
+    # https://matplotlib.org/stable/api/_as_gen/
+    #    matplotlib.axes.Axes.set_title.html
+    # pydoc matplotlib.axes.Axes.set_title
     ax1.set_title(
         label='Y1, Y2 vs X scatter plot', fontweight='bold', fontsize=12
     )
