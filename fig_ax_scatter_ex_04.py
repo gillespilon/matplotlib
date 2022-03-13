@@ -40,6 +40,8 @@ def main():
         ax1.spines[spine].set_visible(False)
         ax2.spines[spine].set_visible(False)
     # add Figure title
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.suptitle
     fig.suptitle(
         t='Scatter plots for two samples', fontweight='bold', fontsize=14
     )
