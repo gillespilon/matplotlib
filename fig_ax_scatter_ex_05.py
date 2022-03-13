@@ -47,7 +47,10 @@ def main():
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
     ax.set_ylabel(ylabel='y', fontweight='bold')
-    # add x axis title
+    # add x axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_xlabel.html
+    # pydoc matplotlib.axes.Axes.set_xlabel
     ax.set_xlabel(
         xlabel='Date (yyyy-mm-dd)', fontweight='bold', fontsize=10
     )
