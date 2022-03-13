@@ -28,6 +28,10 @@ def main():
         dtype={'x': 'datetime64[ns]', 'y1': 'int64', 'y2': 'int64'}
     )
     # create Figure, Axes objects
+    # https://matplotlib.org/stable/api/figure_api.html
+    # class matplotlib.figure.Figure
+    # https://matplotlib.org/stable/api/axes_api.html
+    # class matploitlib.axes.Axes
     fig, ax1 = plt.subplots(nrows=1, ncols=1)
     ax2 = ax1.twinx()
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
