@@ -31,6 +31,8 @@ def main():
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
     # adjust the padding between and around subplots
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
