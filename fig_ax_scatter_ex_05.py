@@ -26,6 +26,10 @@ def main():
         dtype={'x': 'datetime64[ns]', 'y': 'int64'}
     )
     # create Figure, Axes objects
+    # https://matplotlib.org/stable/api/figure_api.html
+    # class matplotlib.figure.Figure
+    # https://matplotlib.org/stable/api/axes_api.html
+    # class matploitlib.axes.Axes
     fig, ax = plt.subplots(nrows=1, ncols=1)
     for spine in 'right', 'top':
         ax.spines[spine].set_visible(False)
