@@ -39,10 +39,13 @@ def main():
     ax.plot(df['x'], df['y'], linestyle='None', marker='.', markersize=8)
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
-    #    matplotlib.axes.Axes.set_title.html
+    #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
     ax.set_title(label='Y vs X scatter plot', fontweight='bold', fontsize=12)
-    # add y axis title
+    # add y axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_ylabel.html
+    # pydoc matplotlib.axes.Axes.set_ylabel
     ax.set_ylabel(ylabel='y', fontweight='bold')
     # add x axis title
     ax.set_xlabel(
