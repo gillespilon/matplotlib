@@ -23,7 +23,8 @@ def main():
     # https://matplotlib.org/stable/api/figure_api.html
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
-    # class matploitlib.axes.Axes
+    # class matplotlib.axes.Axes
+    # pydoc matplotlib.pyplot.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
