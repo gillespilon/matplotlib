@@ -24,7 +24,8 @@ def main():
     # https://matplotlib.org/stable/api/figure_api.html
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
-    # class matploitlib.axes.Axes
+    # class matplotlib.axes.Axes
+    # pydoc matplotlib.pyplot.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # remove two spines
     for spine in 'right', 'top':
