@@ -41,6 +41,9 @@ def main():
     # pydoc matplotlib.axes.Axes.plot
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     # add Axes title
+    # https://matplotlib.org/stable/api/_as_gen/
+    #    matplotlib.axes.Axes.set_title.html
+    # pydoc matplotlib.axes.Axes.set_title
     ax1.set_title(label='Sample one', fontweight='bold', fontsize=12)
     # add y axis title
     ax1.set_ylabel(ylabel='y', fontweight='bold')
