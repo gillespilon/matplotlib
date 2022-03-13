@@ -69,6 +69,8 @@ def main():
         label.set(rotation=30, horizontalalignment='right')
     # format y axis tick labels
     ax1.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax2.plot(
         df['x'], df['y2'], linestyle='None', marker='+', markersize=8,
         color=color_y2
