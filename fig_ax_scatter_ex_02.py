@@ -27,6 +27,7 @@ def main():
     # pydoc matplotlib.pyplot.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
     # adjust the padding between and around subplots
