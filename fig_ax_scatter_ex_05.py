@@ -53,8 +53,11 @@ def main():
         label.set(rotation=30, horizontalalignment='right')
     # format y axis tick labels
     ax.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
-    # save image as file
+    # adjust the padding between and around subplots
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
+    # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.savefig
     # save image as file
