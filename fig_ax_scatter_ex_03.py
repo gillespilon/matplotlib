@@ -50,11 +50,18 @@ def main():
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
     ax1.set_ylabel(ylabel='y', fontweight='bold')
-    # add x axis title
+    # add x axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_xlabel.html
+    # pydoc matplotlib.axes.Axes.set_xlabel
     ax1.set_xlabel(
         xlabel='Sample no. within sample one', fontweight='bold', fontsize=10
     )
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
+    # add x axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_xlabel.html
+    # pydoc matplotlib.axes.Axes.set_xlabel
     ax2.set_xlabel(
         xlabel='Sample no. within sample two', fontweight='bold', fontsize=10
     )
