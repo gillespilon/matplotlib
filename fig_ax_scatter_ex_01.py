@@ -28,6 +28,8 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax.plot(sample_one['y'], linestyle='None', marker='.', markersize=8)
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.savefig
     # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
 
