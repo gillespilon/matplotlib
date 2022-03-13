@@ -77,6 +77,8 @@ def main():
     # add legend to ax1
     # ax1.legend(['one', 'ave'])
     ax1.legend(frameon=False, loc='best')
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
