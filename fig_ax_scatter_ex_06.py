@@ -76,6 +76,9 @@ def main():
         ax.spines[spine].set_color(c=color)
     for label in ax2.get_yticklabels():
         label.set_color(color_y2)
+    # adjust the padding between and around subplots
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
