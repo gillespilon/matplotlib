@@ -33,6 +33,9 @@ def main():
     # adjust the padding between and around subplots
     fig.tight_layout()
     # save image as file
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.savefig
+    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_02.svg", format="svg")
 
 
