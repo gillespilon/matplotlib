@@ -43,12 +43,15 @@ def main():
     )
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
-    #    matplotlib.axes.Axes.set_title.html
+    #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
     ax1.set_title(
         label='Y1, Y2 vs X scatter plot', fontweight='bold', fontsize=12
     )
-    # add y1 axis title
+    # add y axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_ylabel.html
+    # pydoc matplotlib.axes.Axes.set_ylabel
     ax1.set_ylabel(ylabel='y1', fontweight='bold', color=color_y1)
     ax1.tick_params(axis='y', colors=color_y1)
     # add x axis title
@@ -67,7 +70,10 @@ def main():
         df['x'], df['y2'], linestyle='None', marker='+', markersize=8,
         color=color_y2
     )
-    # add y2 axis title
+    # add y axis label
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.set_ylabel.html
+    # pydoc matplotlib.axes.Axes.set_ylabel
     ax2.set_ylabel(ylabel='y2', fontweight='bold', color=color_y2)
     ax2.tick_params(axis='y', colors=color_y2)
     # change color of axis spine
