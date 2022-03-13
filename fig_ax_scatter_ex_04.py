@@ -44,6 +44,7 @@ def main():
         t='Scatter plots for two samples', fontweight='bold', fontsize=14
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
     # add Axes title
     ax1.set_title(label='Sample one', fontweight='bold', fontsize=12)
