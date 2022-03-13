@@ -36,6 +36,7 @@ def main():
     fig, ax1 = plt.subplots(nrows=1, ncols=1)
     ax2 = ax1.twinx()
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax1.plot(
         df['x'], df['y1'], linestyle='None', marker='.', markersize=8,
         color=color_y1
