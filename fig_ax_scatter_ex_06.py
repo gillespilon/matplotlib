@@ -76,8 +76,11 @@ def main():
         ax.spines[spine].set_color(c=color)
     for label in ax2.get_yticklabels():
         label.set_color(color_y2)
-    # save image as file
     fig.tight_layout()
+    # save image as file
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.savefig
+    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_06.svg", format="svg")
 
 
