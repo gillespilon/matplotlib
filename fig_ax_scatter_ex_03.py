@@ -52,6 +52,8 @@ def main():
     )
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
     # adjust the padding between and around subplots
+    # https://matplotlib.org/stable/api/figure_api.html
+    # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
