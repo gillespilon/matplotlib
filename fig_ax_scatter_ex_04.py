@@ -54,8 +54,8 @@ def main():
         linestyle='-', linewidth=1, label='ave'
     )
     # set tick spacing, argument is int or float
-    ax1.xaxis.set_major_locator(MultipleLocator(base=5))
-    ax1.yaxis.set_major_locator(MultipleLocator(base=2))
+    ax1.xaxis.set_major_locator(locator=MultipleLocator(base=5))
+    ax1.yaxis.set_major_locator(locator=MultipleLocator(base=2))
     # to set the format of the tick labels, use set_major_formatter
     # add legend to ax1
     # ax1.legend(['one', 'ave'])
