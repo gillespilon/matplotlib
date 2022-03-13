@@ -57,6 +57,8 @@ def main():
     ax1.set_xlabel(
         xlabel='Sample no. within sample one', fontweight='bold', fontsize=10
     )
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
