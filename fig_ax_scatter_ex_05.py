@@ -35,6 +35,7 @@ def main():
     for spine in 'right', 'top':
         ax.spines[spine].set_visible(False)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
+    # pydoc matplotlib.axes.Axes.plot
     ax.plot(df['x'], df['y'], linestyle='None', marker='.', markersize=8)
     # add Axes title
     ax.set_title(label='Y vs X scatter plot', fontweight='bold', fontsize=12)
