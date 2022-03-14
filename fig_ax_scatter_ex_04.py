@@ -103,6 +103,9 @@ def main():
     # pydoc matplotlib.axes.Axes.set_title
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
     # add average line
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.axhline.html
+    # pydoc matplotlib.axes.Axes.axhline
     ax2.axhline(
         y=sample_two['y'].mean(), xmin=0.05, xmax=0.95, color=colour_two,
         linestyle='-', linewidth=1, label='ave'
