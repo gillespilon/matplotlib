@@ -21,6 +21,7 @@ def main():
         ],
         'y': [32, 37, 35, 28, 41, 44, 35, 31, 34, 38, 42, 36, 31]
     }
+    spines_to_remove = ['top', 'right']
     # https://matplotlib.org/stable/gallery/color/color_demo.html
     # https://matplotlib.org/stable/tutorials/colors/colors.html
     colour_one = '#0077bb'
@@ -37,8 +38,10 @@ def main():
     # class matplotlib.axes.Axes
     # pydoc matplotlib.pyplot.subplots
     fig, ax = plt.subplots(nrows=1, ncols=1)
-    for spine in 'right', 'top':
-        ax.spines[spine].set_visible(False)
+    # remove two spines
+    # https://matplotlib.org/stable/api/spines_api.html
+    # pydoc matplotlib.spines
+    ax.spines[spines_to_remove].set_visible(False)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax.plot(
