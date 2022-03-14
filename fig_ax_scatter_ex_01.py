@@ -16,6 +16,8 @@ def main():
         ]
     }
     # create DataFrames
+    # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+    # pydoc pandas.DataFrame
     df = pd.DataFrame(data=data)
     sample_one = df[df['x'] == 1]
     # create Figure, Axes objects
