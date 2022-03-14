@@ -85,12 +85,12 @@ def main():
     ax2.set_ylabel(ylabel='y2', fontweight='bold', color=colour_two)
     ax2.tick_params(axis='y', colors=colour_two)
     # change color of axis spine
-    for ax, spine, color in zip(
+    for ax, spine, colour in zip(
         [ax1, ax1, ax2, ax2],
         ['left', 'right', 'left', 'right'],
         [colour_one, colour_two, colour_one, colour_two]
     ):
-        ax.spines[spine].set_color(c=color)
+        ax.spines[spine].set_color(c=colour)
     for label in ax2.get_yticklabels():
         label.set_color(colour_two)
     # adjust the padding between and around subplots
