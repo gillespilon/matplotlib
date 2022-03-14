@@ -16,6 +16,9 @@ def main():
             36, 29, 32, 31
         ]
     }
+    # https://matplotlib.org/stable/gallery/color/color_demo.html
+    # https://matplotlib.org/stable/tutorials/colors/colors.html
+    colour_one, colour_two = '#0077bb', '#ee7733'
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
     # pydoc pandas.DataFrame
@@ -41,7 +44,10 @@ def main():
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
+    ax1.plot(
+        sample_one['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_one
+    )
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
@@ -61,7 +67,10 @@ def main():
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
+    ax2.plot(
+        sample_two['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_two
+    )
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
