@@ -64,14 +64,22 @@ def main():
     ax1.set_xlabel(
         xlabel='Date (yyyy-mm-dd)', fontweight='bold', fontsize=10
     )
+    # format x axis labels as dates
+    # https://matplotlib.org/stable/api/
+    #     _as_gen/matplotlib.axis.Axis.set_major_formatter.html
+    # pydoc matplotlib.axis.Axis.set_major_formatter
+    ax1.xaxis.set_major_formatter(formatter=mdates.DateFormatter('%Y-%m-%d'))
     # format x axis tick labels
     # "label" is of type Text, which has a method "set"
     # https://matplotlib.org/stable/api/text_api.html
-    ax1.xaxis.set_major_formatter(formatter=mdates.DateFormatter('%Y-%m-%d'))
     for label in ax1.get_xticklabels(which='major'):
         label.set(rotation=30, horizontalalignment='right')
-    # format y axis tick labels
+    # format y1 axis labels as floats
+    # https://matplotlib.org/stable/api/
+    #     _as_gen/matplotlib.axis.Axis.set_major_formatter.html
+    # pydoc matplotlib.axis.Axis.set_major_formatter
     ax1.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
+    # format y axis tick labels
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax2.plot(
