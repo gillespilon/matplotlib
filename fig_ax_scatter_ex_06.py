@@ -24,6 +24,8 @@ def main():
     color_y1 = '#0000ff'
     color_y2 = '#ff0000'
     # create DataFrames
+    # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+    # pydoc pandas.DataFrame
     df = pd.DataFrame(data=data).astype(
         dtype={'x': 'datetime64[ns]', 'y1': 'int64', 'y2': 'int64'}
     )
