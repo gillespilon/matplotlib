@@ -21,8 +21,9 @@ def main():
         'y1': [32, 37, 35, 28, 41, 44, 35, 31, 34, 38, 42, 36, 31],
         'y2': [40, 46, 43, 38, 48, 53, 45, 38, 44, 45, 51, 43, 41]
     }
-    color_y1 = '#0000ff'
-    color_y2 = '#ff0000'
+    # https://matplotlib.org/stable/gallery/color/color_demo.html
+    # https://matplotlib.org/stable/tutorials/colors/colors.html
+    colour_one, colour_two = '#0077bb', '#ee7733'
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
     # pydoc pandas.DataFrame
@@ -41,7 +42,7 @@ def main():
     # pydoc matplotlib.axes.Axes.plot
     ax1.plot(
         df['x'], df['y1'], linestyle='None', marker='.', markersize=8,
-        color=color_y1
+        color=colour_one
     )
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
@@ -54,8 +55,8 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax1.set_ylabel(ylabel='y1', fontweight='bold', color=color_y1)
-    ax1.tick_params(axis='y', colors=color_y1)
+    ax1.set_ylabel(ylabel='y1', fontweight='bold', color=colour_one)
+    ax1.tick_params(axis='y', colors=colour_one)
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
@@ -75,23 +76,23 @@ def main():
     # pydoc matplotlib.axes.Axes.plot
     ax2.plot(
         df['x'], df['y2'], linestyle='None', marker='+', markersize=8,
-        color=color_y2
+        color=colour_two
     )
     # add y axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax2.set_ylabel(ylabel='y2', fontweight='bold', color=color_y2)
-    ax2.tick_params(axis='y', colors=color_y2)
+    ax2.set_ylabel(ylabel='y2', fontweight='bold', color=colour_two)
+    ax2.tick_params(axis='y', colors=colour_two)
     # change color of axis spine
     for ax, spine, color in zip(
         [ax1, ax1, ax2, ax2],
         ['left', 'right', 'left', 'right'],
-        [color_y1, color_y2, color_y1, color_y2]
+        [colour_one, colour_two, colour_one, colour_two]
     ):
         ax.spines[spine].set_color(c=color)
     for label in ax2.get_yticklabels():
-        label.set_color(color_y2)
+        label.set_color(colour_two)
     # adjust the padding between and around subplots
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.tight_layout
