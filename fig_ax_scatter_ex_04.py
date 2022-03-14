@@ -18,6 +18,9 @@ def main():
             36, 29, 32, 31
         ]
     }
+    # https://matplotlib.org/stable/gallery/color/color_demo.html
+    # https://matplotlib.org/stable/tutorials/colors/colors.html
+    colour_one, colour_two = '#0077bb', '#ee7733'
     # apply style sheet
     # https://matplotlib.org/stable/gallery/style_sheets/\
     #    style_sheets_reference.html
@@ -49,7 +52,10 @@ def main():
     )
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
+    ax1.plot(
+        sample_one['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_one
+    )
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
@@ -69,7 +75,7 @@ def main():
     )
     # add average line
     ax1.axhline(
-        y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
+        y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color=colour_one,
         linestyle='-', linewidth=1, label='ave'
     )
     # set tick spacing, argument is int or float
@@ -81,7 +87,10 @@ def main():
     ax1.legend(frameon=False, loc='best')
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
+    ax2.plot(
+        sample_two['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_two
+    )
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
@@ -96,7 +105,7 @@ def main():
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
     # add average line
     ax2.axhline(
-        y=sample_two['y'].mean(), xmin=0.05, xmax=0.95, color='#ff0000',
+        y=sample_two['y'].mean(), xmin=0.05, xmax=0.95, color=colour_two,
         linestyle='-', linewidth=1, label='ave'
     )
     # add legend to ax2
