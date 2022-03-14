@@ -41,7 +41,7 @@ def main():
     # remove two spines
     # https://matplotlib.org/stable/api/spines_api.html
     # pydoc matplotlib.spines
-    ax.spines[spines_to_remove].set_visible(False)
+    ax.spines[spines_to_remove].set_visible(b=False)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax.plot(
