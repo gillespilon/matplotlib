@@ -40,10 +40,6 @@ def main():
     # class matplotlib.axes.Axes
     # pydoc matplotlib.pyplot.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
-    # remove two spines
-    for spine in 'right', 'top':
-        ax1.spines[spine].set_visible(False)
-        ax2.spines[spine].set_visible(False)
     # add Figure title
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.suptitle
