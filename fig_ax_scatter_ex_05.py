@@ -22,6 +22,8 @@ def main():
         'y': [32, 37, 35, 28, 41, 44, 35, 31, 34, 38, 42, 36, 31]
     }
     # create DataFrames
+    # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+    # pydoc pandas.DataFrame
     df = pd.DataFrame(data=data).astype(
         dtype={'x': 'datetime64[ns]', 'y': 'int64'}
     )
