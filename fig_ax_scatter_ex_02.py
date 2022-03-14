@@ -15,6 +15,9 @@ def main():
             36, 29, 32, 31
         ]
     }
+    # https://matplotlib.org/stable/gallery/color/color_demo.html
+    # https://matplotlib.org/stable/tutorials/colors/colors.html
+    colour_one, colour_two = '#0077bb', '#ee7733'
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
     # pydoc pandas.DataFrame
@@ -30,8 +33,14 @@ def main():
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax1.plot(sample_one['y'], marker='.', markersize=8, linestyle='None')
-    ax2.plot(sample_two['y'], marker='.', markersize=8, linestyle='None')
+    ax1.plot(
+        sample_one['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_one
+    )
+    ax2.plot(
+        sample_two['y'], marker='.', markersize=8, linestyle='None',
+        color=colour_two
+    )
     # adjust the padding between and around subplots
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.tight_layout
