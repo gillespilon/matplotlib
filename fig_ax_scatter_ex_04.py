@@ -22,7 +22,7 @@ def main():
     # https://matplotlib.org/stable/tutorials/colors/colors.html
     colour_one, colour_two = '#0077bb', '#ee7733'
     # apply style sheet
-    # https://matplotlib.org/stable/gallery/style_sheets/\
+    # https://matplotlib.org/stable/gallery/style_sheets/
     #    style_sheets_reference.html
     # print(plt.style.available)
     plt.style.use('fivethirtyeight')
@@ -70,6 +70,9 @@ def main():
         xlabel='Sample no. within sample one', fontweight='bold', fontsize=10
     )
     # add average line
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.axhline.html
+    # pydoc matplotlib.axes.Axes.axhline
     ax1.axhline(
         y=sample_one['y'].mean(), xmin=0.05, xmax=0.95, color=colour_one,
         linestyle='-', linewidth=1, label='ave'
