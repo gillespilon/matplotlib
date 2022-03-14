@@ -25,6 +25,8 @@ def main():
     plt.style.use('fivethirtyeight')
     # plt.style.use('ggplot')
     # create DataFrames
+    # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+    # pydoc pandas.DataFrame
     df = pd.DataFrame(data=data)
     sample_one = df[df['x'] == 1]
     sample_two = df[df['x'] == 2]
