@@ -90,7 +90,7 @@ def main():
         fig=fig,
         ax=ax
     )
-    ds.despine(ax)
+    ds.despine(ax=ax)
     fig.savefig(
         fname='single_figure_single_axes.svg',
         format='svg',
@@ -169,7 +169,7 @@ def main():
             fig=fig,
             ax=ax
         )
-        ds.despine(ax)
+        ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
         fname='single_figure_two_axes.svg',
@@ -208,7 +208,7 @@ def main():
         ax.set_title(label=axes_title[item-1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
-        ds.despine(ax)
+        ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
         fname='single_figure_four_axes.svg',
