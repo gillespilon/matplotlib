@@ -37,7 +37,7 @@ def main():
     # https://matplotlib.org/stable/api/spines_api.html
     # pydoc matplotlib.spines
     for ax in [ax1, ax2]:
-        ax.spines[spines_to_remove].set_visible(False)
+        ax.spines[spines_to_remove].set_visible(b=False)
     # add Figure title
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.suptitle
