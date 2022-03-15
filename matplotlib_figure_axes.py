@@ -153,8 +153,8 @@ def main():
         t=fig_title,
         fontweight='bold'
     )
-    for item in range(1, 3):
-        ax = fig.add_subplot(1, 2, item)
+    for index in range(1, 3):
+        ax = fig.add_subplot(1, 2, index)
         ax.plot(
             df['Date'],
             df['Steps'],
@@ -162,7 +162,7 @@ def main():
             linestyle='-',
             color=colour4
         )
-        ax.set_title(label=axes_title[item-1])
+        ax.set_title(label=axes_title[index-1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
         ds.format_dates(
@@ -185,9 +185,9 @@ def main():
         t=fig_title,
         fontweight='bold'
     )
-    for item in range(1, 5):
-        df = ds.read_file(file_name=f'aq{item}.csv')
-        ax = fig.add_subplot(2, 2, item)
+    for index in range(1, 5):
+        df = ds.read_file(file_name=f'aq{index}.csv')
+        ax = fig.add_subplot(2, 2, index)
         ax.plot(
             df['x'],
             df['y'],
@@ -205,7 +205,7 @@ def main():
             left=2,
             right=20
         )
-        ax.set_title(label=axes_title[item-1])
+        ax.set_title(label=axes_title[index-1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
         ds.despine(ax=ax)
