@@ -25,12 +25,15 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
-    # pydoc matplotlib.figure.Figure.subplots.subplots
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.subplots
+    # pydoc matplotlib.figure.Figure.subplots
     fig, ax = plt.subplots(nrows=1, ncols=1)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax.plot(sample_one['y'], linestyle='None', marker='.', markersize=8)
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.savefig
     # pydoc matplotlib.figure.Figure.savefig
     # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
