@@ -38,7 +38,7 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
-    # pydoc matplotlib.pyplot.subplots
+    # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # add Figure title
     # https://matplotlib.org/stable/api/figure_api.html
