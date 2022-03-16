@@ -29,8 +29,11 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.subplots
     # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
+    # create scatter plots
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax1.plot(
@@ -42,13 +45,13 @@ def main():
         color=colour_two
     )
     # adjust the padding between and around subplots
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.tight_layout
     # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.savefig
-    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_02.svg", format="svg")
 
 
