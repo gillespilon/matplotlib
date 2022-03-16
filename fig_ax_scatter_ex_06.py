@@ -35,7 +35,7 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
-    # pydoc matplotlib.pyplot.subplots
+    # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, ax1 = plt.subplots(nrows=1, ncols=1)
     ax2 = ax1.twinx()
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
