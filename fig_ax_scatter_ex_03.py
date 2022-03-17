@@ -33,7 +33,7 @@ def main():
     # class matplotlib.axes.Axes
     # https://matplotlib.org/stable/api/
     #     figure_api.html#matplotlib.figure.Figure.subplots
-    # pydoc matplotlib.figure.Figure.subplots.subplots
+    # pydoc matplotlib.figure.Figure.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # remove two spines
     # https://matplotlib.org/stable/api/spines_api.html
