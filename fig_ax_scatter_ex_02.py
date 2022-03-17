@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-Create side-by-side scatter plots.
+Create two simple, side-by-side scatter plots.
 """
 
 import matplotlib.pyplot as plt
@@ -31,7 +31,7 @@ def main():
     # class matplotlib.axes.Axes
     # https://matplotlib.org/stable/api/
     #     figure_api.html#matplotlib.figure.Figure.subplots
-    # pydoc matplotlib.figure.Figure.subplots.subplots
+    # pydoc matplotlib.figure.Figure.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # create scatter plots
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
