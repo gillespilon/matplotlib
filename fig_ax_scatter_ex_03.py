@@ -31,6 +31,8 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.subplots
     # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # remove two spines
@@ -39,11 +41,12 @@ def main():
     for ax in [ax1, ax2]:
         ax.spines[spines_to_remove].set_visible(b=False)
     # add Figure title
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/figure_api.html#suptitle
     # pydoc matplotlib.figure.Figure.suptitle
     fig.suptitle(
         t='Scatter plots for two samples', fontweight='bold', fontsize=14
     )
+    # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax1.plot(
@@ -67,6 +70,7 @@ def main():
     ax1.set_xlabel(
         xlabel='Sample no. within sample one', fontweight='bold', fontsize=10
     )
+    # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax2.plot(
@@ -86,13 +90,13 @@ def main():
     # pydoc matplotlib.axes.Axes.set_title
     ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
     # adjust the padding between and around subplots
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.tight_layout
     # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.savefig
-    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_03.svg", format="svg")
 
 
