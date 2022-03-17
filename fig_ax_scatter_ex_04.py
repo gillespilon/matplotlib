@@ -3,6 +3,7 @@
 Create side-by-side scatter plots.
 Add labels, titles to Figure, Axes.
 Add lines for averages.
+Add legend.
 """
 
 from matplotlib.ticker import MultipleLocator
@@ -22,9 +23,10 @@ def main():
     # https://matplotlib.org/stable/tutorials/colors/colors.html
     colour_one, colour_two = '#0077bb', '#ee7733'
     # apply style sheet
+    # https://matplotlib.org/stable/api/style_api.html
     # https://matplotlib.org/stable/gallery/style_sheets/
     #    style_sheets_reference.html
-    # print(plt.style.available)
+    # pydoc matplotlib.style
     plt.style.use('fivethirtyeight')
     # plt.style.use('ggplot')
     # create DataFrames
@@ -41,11 +43,12 @@ def main():
     # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
     # add Figure title
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/figure_api.html#suptitle
     # pydoc matplotlib.figure.Figure.suptitle
     fig.suptitle(
         t='Scatter plots for two samples', fontweight='bold', fontsize=14
     )
+    # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax1.plot(
@@ -56,6 +59,7 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
+    # create scatter plot
     ax1.set_title(label='Sample one', fontweight='bold', fontsize=12)
     # add y axis label
     # https://matplotlib.org/stable/api/_as_gen/
@@ -78,12 +82,24 @@ def main():
         linestyle='-', linewidth=1, label='ave'
     )
     # set tick spacing, argument is int or float
+    # TODO: this needs clarification
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axis.Axis.set_major_locator.html
+    # pydoc matplotlib.axis.XAxis.set_major_locator
     ax1.xaxis.set_major_locator(locator=MultipleLocator(base=5))
+    # TODO: this needs clarification
+    # https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axis.Axis.set_major_locator.html
+    # pydoc matplotlib.axis.YAxis.set_major_locator
     ax1.yaxis.set_major_locator(locator=MultipleLocator(base=2))
+    # TODO: this needs clarification
     # to set the format of the tick labels, use set_major_formatter
     # add legend to ax1
+    # matplotlib.legend](https://matplotlib.org/stable/api/_as_gen/
+    #     matplotlib.axes.Axes.legend.html
     # ax1.legend(['one', 'ave'])
     ax1.legend(frameon=False, loc='best')
+    # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
     ax2.plot(
@@ -113,13 +129,13 @@ def main():
     # add legend to ax2
     ax2.legend(frameon=False, loc='best')
     # adjust the padding between and around subplots
-    # https://matplotlib.org/stable/api/figure_api.html
+    # https://matplotlib.org/stable/api/
+    #     figure_api.html#matplotlib.figure.Figure.tight_layout
     # pydoc matplotlib.figure.Figure.tight_layout
     fig.tight_layout()
     # save image as file
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.savefig
-    # save image as file
     fig.savefig(fname="fig_ax_scatter_ex_04.svg", format="svg")
 
 
