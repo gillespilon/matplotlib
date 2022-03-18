@@ -36,7 +36,7 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
-    # pydoc matplotlib.figure.Figure.subplots.subplots
+    # pydoc matplotlib.figure.Figure.subplots
     fig, ax = plt.subplots(nrows=1, ncols=1)
     # remove two spines
     # https://matplotlib.org/stable/api/spines_api.html
