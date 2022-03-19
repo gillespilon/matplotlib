@@ -47,10 +47,11 @@ def main():
         )
         ax.set_title(
             label=f"{axes_title[index-1]}\n"
-            f"$y = {b:.1f} + {m:.1f}x$"
+            f"$y = {b:.1f} + {m:.1f}x$",
+            fontweight="bold"
         )
-        ax.set_ylabel(ylabel=y_axis_label)
-        ax.set_xlabel(xlabel=x_axis_label)
+        ax.set_ylabel(ylabel=y_axis_label, fontweight="bold")
+        ax.set_xlabel(xlabel=x_axis_label, fontweight="bold")
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
