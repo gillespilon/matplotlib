@@ -22,7 +22,7 @@ def main():
     x_axis_label = 'X axis label (units)'
     y_axis_label = 'Y axis label (units)'
     fig_title = "Anscombe's Quartet"
-    figsize = (8, 6)
+    figsize = (12, 9)
     fig = plt.figure(figsize=figsize)
     fig.suptitle(t=fig_title, fontweight='bold')
     for index in range(1, 5):
@@ -45,7 +45,10 @@ def main():
             left=2,
             right=20
         )
-        ax.set_title(label=axes_title[index-1])
+        ax.set_title(
+            label=f"{axes_title[index-1]}\n"
+            f"$y = {b:.1f} + {m:.1f}x$"
+        )
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
         ds.despine(ax=ax)
