@@ -19,6 +19,7 @@ def main():
     }
     axes_title = ['AQ1', 'AQ2', 'AQ3', 'AQ4']
     colour1, colour2 = '#0077bb', '#33bbee'
+    left, right, top, bottom = 2, 20, 14, 2
     x_axis_label = 'X axis label (units)'
     y_axis_label = 'Y axis label (units)'
     fig_title = "Anscombe's Quartet"
@@ -36,22 +37,33 @@ def main():
             color=colour1
         )
         b, m = nppoly.polyfit(df['x'], df['y'], 1)
-        ax.plot(df['x'], m*df['x'] + b, '-', color=colour2)
+        equation = f"$y = {b:.1f} + {m:.1f}x$"
+        ax.plot(df['x'], m*df['x'] + b, '-', color=colour2, label=equation)
         ax.set_ylim(
-            bottom=2,
-            top=14
+            bottom=bottom,
+            top=top
         )
         ax.set_xlim(
-            left=2,
-            right=20
+            left=left,
+            right=right
         )
-        ax.set_title(
-            label=f"{axes_title[index-1]}\n"
-            f"$y = {b:.1f} + {m:.1f}x$",
-            fontweight="bold"
-        )
+        ax.set_title(label=f"{axes_title[index-1]}", fontweight="bold")
         ax.set_ylabel(ylabel=y_axis_label, fontweight="bold")
         ax.set_xlabel(xlabel=x_axis_label, fontweight="bold")
+        # ax.text(
+        #     x=ax.get_xlim()[0] + .25,
+        #     y=ax.get_ylim()[1],
+        #     s=f"$y = {b:.1f} + {m:.1f}x$\n",
+        #     fontsize=8
+        # )
+        # ax.text(
+        #     x=0,
+        #     y=1,
+        #     s=f"$y = {b:.1f} + {m:.1f}x$\n",
+        #     fontsize=8,
+        #     transform=ax.transAxes
+        # )
+        ax.legend(frameon=False)
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
