@@ -1,6 +1,9 @@
 #! /usr/bin/env python3
 """
 Create grid of Anscombe's quarter of scatter plots.
+Use LaTeX to show equation in legend.
+Label figure, axes.
+Title figure, axes.
 """
 
 import matplotlib.pyplot as plt
