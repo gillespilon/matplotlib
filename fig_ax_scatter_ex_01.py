@@ -6,6 +6,8 @@ Create a simple scatter plot.
 import matplotlib.pyplot as plt
 import pandas as pd
 
+import datasense as ds
+
 
 def main():
     data = {
@@ -38,6 +40,9 @@ def main():
     #     figure_api.html#matplotlib.figure.Figure.savefig
     # pydoc matplotlib.figure.Figure.savefig
     fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
+    # use datasense to do the same thing
+    fig, ax = ds.plot_scatter_y(y=sample_one["y"])
+    fig.savefig(fname="fig_ax_scatter_ex_01ds.svg", format="svg")
 
 
 if __name__ == "__main__":
