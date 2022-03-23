@@ -22,7 +22,7 @@ def main():
         'Keywords': ['matplotlib', 'figure', 'axes'],
         'Rights': 'Copyright 2020 Gilles Pilon'
     }
-    axes_title = ['AQ1', 'AQ2', 'AQ3', 'AQ4']
+    axes_title = ["Data set 1", "Data set 2", "Data set 3", "Data set 4"]
     colour1, colour2 = '#0077bb', '#33bbee'
     left, right, top, bottom = 2, 20, 14, 2
     x_axis_label = 'X axis label (units)'
