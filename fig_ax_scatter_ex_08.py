@@ -24,7 +24,6 @@ def main():
     s = ds.random_data(name="random normal data")
     fig, ax = plt.subplots(nrows=1, ncols=1)
     ax.spines[spines_to_remove].set_visible(b=False)
-    # vis = stats.probplot(x=s, dist="norm", fit=True, plot=ax)
     (osm, osr), (slope, intercept, r) = \
         stats.probplot(x=s, dist="norm", fit=True, plot=ax)
     r_squared = r * r
