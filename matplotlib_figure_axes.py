@@ -180,7 +180,7 @@ def main():
     )
     ds.html_figure(file_name='single_figure_two_axes.svg')
     # Single figure, four axes
-    axes_title = ['AQ1', 'AQ2', 'AQ3', 'AQ4']
+    axes_title = ["Data set 1", "Data set 2", "Data set 3", "Data set 4"]
     df1, df2, df3, df4 = create_dataframe()
     fig = plt.figure(figsize=figsize)
     fig_title = "Anscombe's Quartet"
@@ -190,7 +190,6 @@ def main():
     )
     for index in range(1, 5):
         df = eval(f"df{index}")
-        # df = ds.read_file(file_name=f'aq{index}.csv')
         ax = fig.add_subplot(2, 2, index)
         ax.plot(
             df['x'],
