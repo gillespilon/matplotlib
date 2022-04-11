@@ -47,12 +47,8 @@ def main():
     ax.axhline(y=df["Steps"].median(), xmin=0.05, xmax=0.95, color=colour2)
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
-        t=fig_title,
-        x=middle_titles,
-        horizontalalignment="center",
-        verticalalignment="top",
-        fontsize=15,
-        fontweight="bold",
+        t=fig_title, x=middle_titles, horizontalalignment="center",
+        verticalalignment="top", fontsize=15, fontweight="bold",
     )
     ax.set_ylabel(
         ylabel=y_axis_label, loc="center", fontsize=12, fontweight="semibold"
@@ -61,12 +57,8 @@ def main():
         xlabel=x_axis_label, loc="center", fontsize=12, fontweight="semibold"
     )
     ax.set_title(
-        label=axes_title,
-        loc="center",
-        horizontalalignment="center",
-        verticalalignment="top",
-        fontsize=12,
-        fontweight="semibold",
+        label=axes_title, loc="center", horizontalalignment="center",
+        verticalalignment="top", fontsize=12, fontweight="semibold",
     )
     ds.format_dates(fig=fig, ax=ax)
     ds.despine(ax=ax)
@@ -87,12 +79,8 @@ def main():
     )
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
-        t=fig_title,
-        x=middle_titles,
-        horizontalalignment="center",
-        verticalalignment="top",
-        fontsize=15,
-        fontweight="bold",
+        t=fig_title, x=middle_titles, horizontalalignment="center",
+        verticalalignment="top", fontsize=15, fontweight="bold",
     )
     ax1.set_title(label=axes_title, fontweight="bold")
     ax1.set_ylabel(ylabel=left_y_axis_label, fontweight="bold")
@@ -101,9 +89,7 @@ def main():
     ds.format_dates(fig=fig, ax=ax1)
     fig.savefig(
         fname="single_figure_single_axes_left_y_right_y.svg",
-        bbox_inches="tight",
-        format="svg",
-        metadata=metadata_dict,
+        bbox_inches="tight", format="svg", metadata=metadata_dict,
     )
     ds.html_figure(file_name="single_figure_single_axes_left_y_right_y.svg")
     # Single figure, two axes
