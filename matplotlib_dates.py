@@ -212,27 +212,11 @@ def plot_pretty(
     axis_title: str = None
 ) -> None:
     ds.despine(ax)
-    fig.suptitle(
-        t=figure_title,
-        fontweight='bold',
-        fontsize=16
-    )
-    ax.set_title(
-        label=axis_title,
-        fontweight='bold'
-    )
-    ax.set_xlabel(
-        xlabel=abscissa_label,
-        fontweight='bold'
-    )
-    ax.set_ylabel(
-        ylabel=ordinate_label,
-        fontweight='bold'
-    )
-    fig.savefig(
-        fname=file_name_graph,
-        format='svg'
-    )
+    fig.suptitle(t=figure_title, fontweight='bold', fontsize=16)
+    ax.set_title(label=axis_title, fontweight='bold')
+    ax.set_xlabel(xlabel=abscissa_label, fontweight='bold')
+    ax.set_ylabel(ylabel=ordinate_label, fontweight='bold')
+    fig.savefig(fname=file_name_graph, format='svg')
     ds.html_figure(file_name=file_name_graph)
 
 
