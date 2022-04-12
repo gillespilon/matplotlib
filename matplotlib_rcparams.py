@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-docstring
+List the matplotlib.rcParams.keys().
 """
 
 from pathlib import Path
