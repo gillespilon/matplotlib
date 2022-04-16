@@ -34,14 +34,8 @@ def main():
         header_title=header_title,
         header_id=header_id
     )
-    figsize = (8, 6)
-    colour1 = '#0077bb'
     pd.options.display.max_columns = 600
     pd.options.display.max_rows = 600
-    figure_title = 'Figure title'
-    axis_title = 'Axis title'
-    abscissa_label = 'abscissa'
-    ordinate_label = 'ordinate'
     column_abscissa_datefloat_one = 'datefloats_one'
     column_abscissa_datetime_one = 'datetimes_one'
     column_abscissa_datefloat_two = 'datefloats_two'
@@ -64,6 +58,12 @@ def main():
         column_ordinate_one: [10, 15, 30, 35, 40, 45, 40, 30, 35, 50, 75],
         column_ordinate_two: [20, 35, 20, 15, 30, 45, 50, 40, 45, 50, 65]
     }
+    figure_title = 'Figure title'
+    abscissa_label = 'abscissa'
+    ordinate_label = 'ordinate'
+    axis_title = 'Axis title'
+    colour1 = '#0077bb'
+    figsize = (8, 6)
     data = pd.DataFrame(data=raw)
     print(
         f'DataFrame:\n'
