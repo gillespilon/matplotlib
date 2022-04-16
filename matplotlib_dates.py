@@ -102,8 +102,8 @@ def main():
     # )
     # Test line plot x y, smoothing None
     fig, ax = ds.plot_line_x_y(
-        data[column_abscissa_datetime_one],
-        data[column_ordinate_one],
+        X=data[column_abscissa_datetime_one],
+        y=data[column_ordinate_one],
         figsize=figsize
     )
     plot_pretty(
