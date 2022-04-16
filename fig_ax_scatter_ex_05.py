@@ -8,6 +8,7 @@ Format the x axis as dates and rotate.
 from matplotlib.ticker import FormatStrFormatter
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
+import datasense as ds
 import pandas as pd
 
 
@@ -28,6 +29,7 @@ def main():
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
     # pydoc pandas.DataFrame
+    ds.style_graph()
     df = pd.DataFrame(data=data).astype(
         dtype={'x': 'datetime64[ns]', 'y': 'int64'}
     )
@@ -52,19 +54,17 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
-    ax.set_title(label='Y vs X scatter plot', fontweight='bold', fontsize=12)
+    ax.set_title(label='Y vs X scatter plot')
     # add y axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax.set_ylabel(ylabel='y', fontweight='bold')
+    ax.set_ylabel(ylabel='y')
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
     # pydoc matplotlib.axes.Axes.set_xlabel
-    ax.set_xlabel(
-        xlabel='Date (yyyy-mm-dd)', fontweight='bold', fontsize=10
-    )
+    ax.set_xlabel(xlabel='Date (yyyy-mm-dd)')
     # format x axis tick labels
     # "label" is of type Text, which has a method "set"
     # https://matplotlib.org/stable/api/text_api.html
