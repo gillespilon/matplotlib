@@ -164,8 +164,8 @@ def main():
     )
     # Test line plot x y, smoothing = 'natural_cubic_spline'
     fig, ax = ds.plot_line_x_y(
-        data[column_abscissa_datetime_one],
-        data[column_ordinate_one],
+        X=data[column_abscissa_datetime_one],
+        y=data[column_ordinate_one],
         smoothing='natural_cubic_spline',
         number_knots=5,
         figsize=figsize
