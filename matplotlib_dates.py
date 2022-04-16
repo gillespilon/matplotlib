@@ -62,8 +62,8 @@ def main():
     abscissa_label = 'abscissa'
     ordinate_label = 'ordinate'
     axis_title = 'Axis title'
-    colour1 = '#0077bb'
     figsize = (8, 6)
+    ds.style_graph()
     data = pd.DataFrame(data=raw)
     print(
         f'DataFrame:\n'
@@ -212,10 +212,10 @@ def plot_pretty(
     axis_title: str = None
 ) -> None:
     ds.despine(ax=ax)
-    fig.suptitle(t=figure_title, fontweight='bold', fontsize=16)
-    ax.set_title(label=axis_title, fontweight='bold')
-    ax.set_xlabel(xlabel=abscissa_label, fontweight='bold')
-    ax.set_ylabel(ylabel=ordinate_label, fontweight='bold')
+    fig.suptitle(t=figure_title)
+    ax.set_title(label=axis_title)
+    ax.set_xlabel(xlabel=abscissa_label)
+    ax.set_ylabel(ylabel=ordinate_label)
     fig.savefig(fname=file_name_graph, format='svg')
     ds.html_figure(file_name=file_name_graph)
 
@@ -240,49 +240,25 @@ def plot_line_two_subplots(
     fig.autofmt_xdate()
     ax1.plot(
         dataframe[columnx],
-        dataframe[columny],
-        color=colour1
+        dataframe[columny]
     )
     ds.despine(ax1)
-    fig.suptitle(
-        t=figuretitle,
-        fontweight='bold',
-        fontsize=16
-    )
-    ax1.set_title(
-        label=axistitle,
-        fontweight='bold'
-    )
-    ax1.set_xlabel(
-        xlabel=xlabel,
-        fontweight='bold'
-    )
-    ax1.set_ylabel(
-        ylabel=ylabel,
-        fontweight='bold'
-    )
+    fig.suptitle(t=figuretitle)
+    ax1.set_title(label=axistitle)
+    ax1.set_xlabel(xlabel=xlabel)
+    ax1.set_ylabel(ylabel=ylabel)
     ax2 = fig.add_subplot(122)
     ax2.xaxis.set_major_locator(locator=loc)
     ax2.xaxis.set_major_formatter(formatter=fmt)
     fig.autofmt_xdate()
     ax2.plot(
         dataframe[columnx],
-        dataframe[columny],
-        color=colour1
+        dataframe[columny]
     )
     ds.despine(ax2)
-    ax2.set_title(
-        label=axistitle,
-        fontweight='bold'
-    )
-    ax2.set_xlabel(
-        xlabel=xlabel,
-        fontweight='bold'
-    )
-    ax2.set_ylabel(
-        ylabel=ylabel,
-        fontweight='bold'
-    )
+    ax2.set_title(label=axistitle)
+    ax2.set_xlabel(xlabel=xlabel)
+    ax2.set_ylabel(ylabel=ylabel)
     fig.savefig(
         fname=filenamegraph,
         format='svg'
