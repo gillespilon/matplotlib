@@ -22,6 +22,7 @@ def main():
     colour1, colour2 = "#0077bb", "#33bbee"
     axes_label = "Normal Probability Plot"
     spines_to_remove = ["top", "right"]
+    ds.style_graph()
     # replace next line(s) with your data Series
     # df = ds.read_file(file_name=Path("us_mpg.csv"))
     # s = df.iloc[:, 0]
@@ -35,9 +36,9 @@ def main():
     equation = f"$r^2 = {r_squared:.3f}$"
     ax.get_lines()[0].set(color=colour1, markersize=4)
     ax.get_lines()[1].set(color=colour2)
-    ax.set_title(label=f"{axes_label}", fontweight="bold", fontsize=10)
-    ax.set_xlabel(xlabel="Theoretical Quantiles", fontweight="bold")
-    ax.set_ylabel(ylabel="Ordered Values", fontweight="bold")
+    ax.set_title(label=f"{axes_label}")
+    ax.set_xlabel(xlabel="Theoretical Quantiles")
+    ax.set_ylabel(ylabel="Ordered Values")
     text = AnchoredText(s=equation, loc='upper left', frameon=False)
     ax.add_artist(a=text)
     fig.savefig(fname="fig_ax_npp_ex_08.svg", format="svg")
