@@ -8,6 +8,7 @@ Add legend.
 
 from matplotlib.ticker import MultipleLocator
 import matplotlib.pyplot as plt
+import datasense as ds
 import pandas as pd
 
 
@@ -19,6 +20,7 @@ def main():
             36, 29, 32, 31
         ]
     }
+    ds.style_graph()
     # https://matplotlib.org/stable/gallery/color/color_demo.html
     # https://matplotlib.org/stable/tutorials/colors/colors.html
     colour_one, colour_two = '#0077bb', '#ee7733'
@@ -47,9 +49,7 @@ def main():
     # add Figure title
     # https://matplotlib.org/stable/api/figure_api.html#suptitle
     # pydoc matplotlib.figure.Figure.suptitle
-    fig.suptitle(
-        t='Scatter plots for two samples', fontweight='bold', fontsize=14
-    )
+    fig.suptitle(t='Scatter plots for two samples')
     # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
@@ -61,19 +61,17 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
-    ax1.set_title(label='Sample one', fontweight='bold', fontsize=12)
+    ax1.set_title(label='Sample one')
     # add y axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax1.set_ylabel(ylabel='y', fontweight='bold')
+    ax1.set_ylabel(ylabel='y')
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
     # pydoc matplotlib.axes.Axes.set_xlabel
-    ax1.set_xlabel(
-        xlabel='Sample no. within sample one', fontweight='bold', fontsize=10
-    )
+    ax1.set_xlabel(xlabel='Sample item')
     # add average line
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.axhline.html
@@ -108,14 +106,12 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
     # pydoc matplotlib.axes.Axes.set_xlabel
-    ax2.set_xlabel(
-        xlabel='Sample no. within sample two', fontweight='bold', fontsize=10
-    )
+    ax2.set_xlabel(xlabel='Sample item')
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
-    ax2.set_title(label='Sample two', fontweight='bold', fontsize=12)
+    ax2.set_title(label='Sample two')
     # add average line
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.axhline.html
