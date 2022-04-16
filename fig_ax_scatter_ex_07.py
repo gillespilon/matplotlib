@@ -29,11 +29,12 @@ def main():
     y_axis_label = "Y axis label (units)"
     fig_title = "Anscombe's Quartet"
     figsize = (12, 9)
+    ds.style_graph()
     # create DataFrames
     df1, df2, df3, df4 = create_dataframe()
     # create fig to hold four Axes
     fig = plt.figure(figsize=figsize)
-    fig.suptitle(t=fig_title, fontweight="bold")
+    fig.suptitle(t=fig_title)
     # create four Axes, scatter plots, regression lines
     for index in range(1, 5):
         df = eval(f"df{index}")
@@ -44,9 +45,9 @@ def main():
         ax.plot(df["x"], m * df["x"] + b, "-", color=colour2, label=equation)
         ax.set_ylim(bottom=bottom, top=top)
         ax.set_xlim(left=left, right=right)
-        ax.set_title(label=f"{axes_title[index-1]}", fontweight="bold")
-        ax.set_ylabel(ylabel=y_axis_label, fontweight="bold")
-        ax.set_xlabel(xlabel=x_axis_label, fontweight="bold")
+        ax.set_title(label=f"{axes_title[index-1]}")
+        ax.set_ylabel(ylabel=y_axis_label)
+        ax.set_xlabel(xlabel=x_axis_label)
         ax.legend(frameon=False)
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
