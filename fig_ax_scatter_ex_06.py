@@ -7,6 +7,7 @@ Format the x axis as dates and rotate.
 from matplotlib.ticker import FormatStrFormatter
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
+import datasense as ds
 import pandas as pd
 
 
@@ -26,6 +27,7 @@ def main():
     colour_one, colour_two = '#0077bb', '#ee7733'
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+    ds.style_graph()
     # pydoc pandas.DataFrame
     df = pd.DataFrame(data=data).astype(
         dtype={'x': 'datetime64[ns]', 'y1': 'int64', 'y2': 'int64'}
@@ -35,7 +37,7 @@ def main():
     # class matplotlib.figure.Figure
     # https://matplotlib.org/stable/api/axes_api.html
     # class matplotlib.axes.Axes
-    # pydoc matplotlib.figure.Figure.subplots
+    # pydoc matplotlib.figure.Figure.subplots.subplots
     fig, ax1 = plt.subplots(nrows=1, ncols=1)
     ax2 = ax1.twinx()
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
@@ -48,22 +50,18 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
     # pydoc matplotlib.axes.Axes.set_title
-    ax1.set_title(
-        label='Y1, Y2 vs X scatter plot', fontweight='bold', fontsize=12
-    )
+    ax1.set_title(label='Y1, Y2 vs X scatter plot')
     # add y axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax1.set_ylabel(ylabel='y1', fontweight='bold', color=colour_one)
+    ax1.set_ylabel(ylabel='y1', color=colour_one)
     ax1.tick_params(axis='y', colors=colour_one)
     # add x axis label
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_xlabel.html
     # pydoc matplotlib.axes.Axes.set_xlabel
-    ax1.set_xlabel(
-        xlabel='Date (yyyy-mm-dd)', fontweight='bold', fontsize=10
-    )
+    ax1.set_xlabel(xlabel='Date (yyyy-mm-dd)')
     # format x axis labels as dates
     # https://matplotlib.org/stable/api/
     #     _as_gen/matplotlib.axis.Axis.set_major_formatter.html
@@ -90,7 +88,7 @@ def main():
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_ylabel.html
     # pydoc matplotlib.axes.Axes.set_ylabel
-    ax2.set_ylabel(ylabel='y2', fontweight='bold', color=colour_two)
+    ax2.set_ylabel(ylabel='y2', color=colour_two)
     ax2.tick_params(axis='y', colors=colour_two)
     # change color of axis spine
     for ax, spine, colour in zip(
