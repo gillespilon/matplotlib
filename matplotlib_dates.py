@@ -211,7 +211,7 @@ def plot_pretty(
     figure_title: Optional[str] = None,
     axis_title: str = None
 ) -> None:
-    ds.despine(ax)
+    ds.despine(ax=ax)
     fig.suptitle(t=figure_title, fontweight='bold', fontsize=16)
     ax.set_title(label=axis_title, fontweight='bold')
     ax.set_xlabel(xlabel=abscissa_label, fontweight='bold')
