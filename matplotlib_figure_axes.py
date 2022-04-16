@@ -25,6 +25,7 @@ def main():
     original_stdout = ds.html_begin(
         output_url=output_url, header_title=header_title, header_id=header_id
     )
+    ds.style_graph()
     figsize = (8, 6)
     metadata_dict = {
         "Creator": "Gilles Pilon",
@@ -35,8 +36,7 @@ def main():
     }
     colour1 = "#0077bb"
     colour2 = "#33bbee"
-    colour3 = "#cc3311"
-    colour4 = "#009988"
+    colour3 = "#009988"
     df = ds.read_file(file_name="weight.csv", parse_dates=["Date"])
     # Single figure, single axes
     fig_title = "Figure title"
@@ -48,17 +48,17 @@ def main():
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
         t=fig_title, x=middle_titles, horizontalalignment="center",
-        verticalalignment="top", fontsize=15, fontweight="bold",
+        verticalalignment="top"
     )
     ax.set_ylabel(
-        ylabel=y_axis_label, loc="center", fontsize=12, fontweight="semibold"
+        ylabel=y_axis_label, loc="center"
     )
     ax.set_xlabel(
-        xlabel=x_axis_label, loc="center", fontsize=12, fontweight="semibold"
+        xlabel=x_axis_label, loc="center"
     )
     ax.set_title(
         label=axes_title, loc="center", horizontalalignment="center",
-        verticalalignment="top", fontsize=12, fontweight="semibold",
+        verticalalignment="top"
     )
     ds.format_dates(fig=fig, ax=ax)
     ds.despine(ax=ax)
@@ -80,12 +80,12 @@ def main():
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
         t=fig_title, x=middle_titles, horizontalalignment="center",
-        verticalalignment="top", fontsize=15, fontweight="bold",
+        verticalalignment="top"
     )
-    ax1.set_title(label=axes_title, fontweight="bold")
-    ax1.set_ylabel(ylabel=left_y_axis_label, fontweight="bold")
-    ax1.set_xlabel(xlabel=x_axis_label, fontweight="bold")
-    ax2.set_ylabel(ylabel=right_y_axis_label, fontweight="bold")
+    ax1.set_title(label=axes_title)
+    ax1.set_ylabel(ylabel=left_y_axis_label)
+    ax1.set_xlabel(xlabel=x_axis_label)
+    ax2.set_ylabel(ylabel=right_y_axis_label)
     ds.format_dates(fig=fig, ax=ax1)
     fig.savefig(
         fname="single_figure_single_axes_left_y_right_y.svg",
@@ -95,11 +95,11 @@ def main():
     # Single figure, two axes
     axes_title = ["Axes Title I", "Axes Title II"]
     fig = plt.figure(figsize=figsize)
-    fig.suptitle(t=fig_title, fontweight="bold")
+    fig.suptitle(t=fig_title)
     for index in range(1, 3):
         ax = fig.add_subplot(1, 2, index)
         ax.plot(
-            df["Date"], df["Steps"], marker="o", linestyle="-", color=colour4
+            df["Date"], df["Steps"], marker="o", linestyle="-", color=colour3
         )
         ax.set_title(label=axes_title[index - 1])
         ax.set_ylabel(ylabel=y_axis_label)
@@ -117,7 +117,7 @@ def main():
     df1, df2, df3, df4 = create_dataframe()
     fig = plt.figure(figsize=figsize)
     fig_title = "Anscombe's Quartet"
-    fig.suptitle(t=fig_title, fontweight="bold")
+    fig.suptitle(t=fig_title)
     for index in range(1, 5):
         df = eval(f"df{index}")
         ax = fig.add_subplot(2, 2, index)
@@ -130,7 +130,7 @@ def main():
         ax.set_title(label=axes_title[index - 1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
-        ax.legend(frameon=False, fontsize=8)
+        ax.legend(frameon=False)
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
