@@ -25,7 +25,6 @@ def main():
     spines_to_remove = ['top', 'right']
     # https://matplotlib.org/stable/gallery/color/color_demo.html
     # https://matplotlib.org/stable/tutorials/colors/colors.html
-    colour_one = '#0077bb'
     # create DataFrames
     # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
     # pydoc pandas.DataFrame
@@ -46,10 +45,7 @@ def main():
     ax.spines[spines_to_remove].set_visible(b=False)
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax.plot(
-        df['x'], df['y'], linestyle='None', marker='.', markersize=8,
-        color=colour_one
-    )
+    ax.plot(df['x'], df['y'], linestyle='None')
     # add Axes title
     # https://matplotlib.org/stable/api/_as_gen/
     #     matplotlib.axes.Axes.set_title.html
