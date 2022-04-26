@@ -15,7 +15,7 @@ https://matplotlib.org/api/dates_api.html#matplotlib-date-format
 # fix one subplot function to accept two series insteead of one df
 # change call to graph functions so that they return ax and then add info
 
-from typing import List, Optional, Tuple
+from typing import List, NoReturn, Optional, Tuple
 
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -210,7 +210,7 @@ def plot_pretty(
     *,
     figure_title: Optional[str] = None,
     axis_title: str = None
-) -> None:
+) -> NoReturn:
     ds.despine(ax=ax)
     fig.suptitle(t=figure_title)
     ax.set_title(label=axis_title)
@@ -230,7 +230,7 @@ def plot_line_two_subplots(
     axistitle: str,
     xlabel: str,
     ylabel: str
-) -> None:
+) -> NoReturn:
     fig = plt.figure(figsize=figurewidthheight)
     loc = mdates.AutoDateLocator()
     fmt = mdates.AutoDateFormatter(loc)
