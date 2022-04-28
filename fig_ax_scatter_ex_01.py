@@ -42,7 +42,7 @@ def main():
     fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
     # use datasense to do the same thing
     fig, ax = ds.plot_scatter_y(y=sample_one["y"])
-    fig.savefig(fname="fig_ax_scatter_ex_01ds.svg", format="svg")
+    fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
 
 
 if __name__ == "__main__":
