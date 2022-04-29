@@ -18,9 +18,7 @@ def main():
         series=s, bin_range=(-4, 4), number_bins=8, bin_label_bool=True
     )
     ax.set_xlabel(xlabel="x axis label", labelpad=30)
-    ax.xaxis.set_major_formatter(
-        formatter=StrMethodFormatter(fmt="{x:0.1f}")
-    )
+    ax.xaxis.set_major_formatter(formatter=StrMethodFormatter(fmt="{x:0.1f}"))
     ax.set_ylabel(ylabel="y axis label")
     plt.tight_layout()
     fig.savefig(fname="fix_ds_histogram.svg")
