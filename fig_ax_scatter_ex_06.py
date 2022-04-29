@@ -4,7 +4,7 @@ Create two scatter plots with different y axes.
 Format the x axis as dates and rotate.
 """
 
-from matplotlib.ticker import FormatStrFormatter
+from matplotlib.ticker import StrMethodFormatter
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import datasense as ds
@@ -76,7 +76,7 @@ def main():
     # https://matplotlib.org/stable/api/
     #     _as_gen/matplotlib.axis.Axis.set_major_formatter.html
     # pydoc matplotlib.axis.Axis.set_major_formatter
-    ax1.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
+    ax1.yaxis.set_major_formatter(formatter=StrMethodFormatter(fmt="{x:0.1f}"))
     # format y axis tick labels
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
