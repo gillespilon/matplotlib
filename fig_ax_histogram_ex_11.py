@@ -17,7 +17,6 @@ def main():
     xlabel = "X axis label"
     title = "Histogram"
     ds.style_graph()
-    # fig, ax = ds.plot_histogram(series=s)
     fig, ax = ds.plot_histogram(
         series=s, bin_range=(-4, 4), number_bins=8, bin_label_bool=True
     )
