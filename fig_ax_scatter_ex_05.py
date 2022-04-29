@@ -5,7 +5,7 @@ Format the y axis as floats.
 Format the x axis as dates and rotate.
 """
 
-from matplotlib.ticker import FormatStrFormatter
+from matplotlib.ticker import StrMethodFormatter
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import datasense as ds
@@ -68,7 +68,7 @@ def main():
     for label in ax.get_xticklabels(which='major'):
         label.set(rotation=30, horizontalalignment='right')
     # format y axis tick labels
-    ax.yaxis.set_major_formatter(formatter=FormatStrFormatter('%.1f'))
+    ax.yaxis.set_major_formatter(formatter=StrMethodFormatter(fmt="{x:0.1f}"))
     # adjust the padding between and around subplots
     # https://matplotlib.org/stable/api/figure_api.html
     # pydoc matplotlib.figure.Figure.tight_layout
