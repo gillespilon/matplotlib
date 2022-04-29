@@ -14,7 +14,9 @@ def main():
     s = ds.random_data(size=300)
     ds.style_graph()
     # fig, ax = ds.plot_histogram(series=s)
-    fig, ax = ds.plot_histogram(series=s, bin_label_bool=True)
+    fig, ax = ds.plot_histogram(
+        series=s, bin_range=(-4, 4), number_bins=8, bin_label_bool=True
+    )
     ax.set_xlabel(xlabel="x axis label", labelpad=30)
     ax.xaxis.set_major_formatter(
         formatter=StrMethodFormatter(fmt="{x:0.1f}")
