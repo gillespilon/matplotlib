@@ -11,8 +11,11 @@ import datasense as ds
 
 def main():
     s = ds.random_data(size=300)
+    ds.style_graph()
+    # fig, ax = ds.plot_histogram(series=s)
     fig, ax = ds.plot_histogram(series=s, bin_label_bool=True)
     ax.set_xlabel(xlabel="x axis label", labelpad=30)
+    ax.set_ylabel(ylabel="y axis label")
     plt.tight_layout()
     fig.savefig(fname="fix_ds_histogram.svg")
 
