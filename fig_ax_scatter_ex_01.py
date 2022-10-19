@@ -4,9 +4,8 @@ Create a simple scatter plot.
 """
 
 import matplotlib.pyplot as plt
-import pandas as pd
-
 import datasense as ds
+import pandas as pd
 
 
 def main():
@@ -30,19 +29,33 @@ def main():
     # https://matplotlib.org/stable/api/
     #     figure_api.html#matplotlib.figure.Figure.subplots
     # pydoc matplotlib.figure.Figure.subplots
-    fig, ax = plt.subplots(nrows=1, ncols=1)
+    fig, ax = plt.subplots(
+        nrows=1,
+        ncols=1
+    )
     # create scatter plot
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html
     # pydoc matplotlib.axes.Axes.plot
-    ax.plot(sample_one["y"], linestyle="None", marker=".", markersize=8)
+    ax.plot(
+        sample_one["y"],
+        linestyle="None",
+        marker=".",
+        markersize=8
+    )
     # save image as file
     # https://matplotlib.org/stable/api/
     #     figure_api.html#matplotlib.figure.Figure.savefig
     # pydoc matplotlib.figure.Figure.savefig
-    fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
+    fig.savefig(
+        fname="fig_ax_scatter_ex_01.svg",
+        format="svg"
+    )
     # use datasense to do the same thing
     fig, ax = ds.plot_scatter_y(y=sample_one["y"])
-    fig.savefig(fname="fig_ax_scatter_ex_01.svg", format="svg")
+    fig.savefig(
+        fname="fig_ax_scatter_ex_01.svg",
+        format="svg"
+    )
 
 
 if __name__ == "__main__":
