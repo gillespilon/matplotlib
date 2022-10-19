@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-List the file types for matplotlib.figure.Figure.savefig.
+List the file types for matplotlib.figure.Figure.savefig
 """
 
 from pathlib import Path
@@ -24,9 +24,15 @@ def main():
     )
     fig = plt.figure()
     print(fig.canvas.get_supported_filetypes())
-    ds.script_summary(script_path=Path(__file__), action="finished at")
-    ds.html_end(original_stdout=original_stdout, output_url=output_url)
+    ds.script_summary(
+        script_path=Path(__file__),
+        action="finished at"
+    )
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=output_url
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
