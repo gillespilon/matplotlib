@@ -13,10 +13,17 @@ import datasense as ds
 
 def main():
     start_time = time.perf_counter()
-    path_yeo_johnson_original = Path("yeo_johnson_original.svg", format="svg")
-    path_yeo_johnson = Path("fig_ax_yeo_johnson_ex_10.svg", format="svg")
+    path_yeo_johnson_original = Path(
+        "yeo_johnson_original.svg",
+        format="svg"
+    )
+    path_yeo_johnson = Path(
+        "fig_ax_yeo_johnson_ex_10.svg",
+        format="svg"
+    )
     path_yeo_johnson_transformed = Path(
-        "yeo_johnson_transformed.svg", format="svg"
+        "yeo_johnson_transformed.svg",
+        format="svg"
     )
     colour1 = "#0077bb"
     axes_label = "Normal Probability Plot"
@@ -28,7 +35,9 @@ def main():
     ylabel2 = "Ordered Values"
     la, lb = -20, 20
     original_stdout = ds.html_begin(
-        output_url=output_url, header_title=header_title, header_id=header_id
+        output_url=output_url,
+        header_title=header_title,
+        header_id=header_id
     )
     ds.script_summary(script_path=Path(__file__), action="started at")
     ds.style_graph()
@@ -37,13 +46,32 @@ def main():
     # s = df.iloc[:, 0]
     # comment out next line if reading your own file
     s = stats.loggamma.rvs(5, size=500) + 5
-    fig, ax = plt.subplots(nrows=1, ncols=1)
-    stats.yeojohnson_normplot(x=s, la=la, lb=lb, plot=ax)
-    ax.get_lines()[0].set(color=colour1, marker=".", markersize=4)
+    fig, ax = plt.subplots(
+        nrows=1,
+        ncols=1
+    )
+    stats.yeojohnson_normplot(
+        x=s,
+        la=la,
+        lb=lb,
+        plot=ax
+    )
+    ax.get_lines()[0].set(
+        color=colour1,
+        marker=".",
+        markersize=4
+    )
     yeojohson, maxlog = stats.boxcox(x=s)
-    ax.axvline(maxlog, color=colour1, label=f"λ      = {maxlog:7.3f}")
+    ax.axvline(
+        maxlog,
+        color=colour1,
+        label=f"λ      = {maxlog:7.3f}"
+    )
     ax.set_ylabel(ylabel=ylabel1)
-    ax.legend(frameon=False, prop={"family": "monospace", "size": 8})
+    ax.legend(
+        frameon=False,
+        prop={"family": "monospace", "size": 8}
+    )
     ds.despine(ax=ax)
     fig.savefig(fname=path_yeo_johnson)
     ds.html_figure(file_name=path_yeo_johnson)
@@ -62,9 +90,18 @@ def main():
     fig.savefig(fname=path_yeo_johnson_transformed)
     ds.html_figure(file_name=path_yeo_johnson_transformed)
     stop_time = time.perf_counter()
-    ds.script_summary(script_path=Path(__file__), action="finished at")
-    ds.report_summary(start_time=start_time, stop_time=stop_time)
-    ds.html_end(original_stdout=original_stdout, output_url=output_url)
+    ds.script_summary(
+        script_path=Path(__file__),
+        action="finished at"
+    )
+    ds.report_summary(
+        start_time=start_time,
+        stop_time=stop_time
+    )
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=output_url
+    )
     # plt.show()
 
 
