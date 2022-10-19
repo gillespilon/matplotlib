@@ -22,7 +22,12 @@ def main():
         "Keywords": ["matplotlib", "figure", "axes"],
         "Rights": "Copyright 2020 Gilles Pilon",
     }
-    axes_title = ["Data set 1", "Data set 2", "Data set 3", "Data set 4"]
+    axes_title = [
+        "Data set 1",
+        "Data set 2",
+        "Data set 3",
+        "Data set 4"
+    ]
     colour1, colour2 = "#0077bb", "#33bbee"
     left, right, top, bottom = 2, 20, 14, 2
     x_axis_label = "X axis label (units)"
@@ -39,12 +44,34 @@ def main():
     for index in range(1, 5):
         df = eval(f"df{index}")
         ax = fig.add_subplot(2, 2, index)
-        ax.plot(df["x"], df["y"], marker=".", linestyle="", color=colour1)
-        b, m = nppoly.polyfit(df["x"], df["y"], 1)
+        ax.plot(
+            df["x"],
+            df["y"],
+            marker=".",
+            linestyle="",
+            color=colour1
+        )
+        b, m = nppoly.polyfit(
+            x=df["x"],
+            y=df["y"],
+            deg=1
+        )
         equation = f"$y = {b:.1f} + {m:.1f}x$"
-        ax.plot(df["x"], m * df["x"] + b, "-", color=colour2, label=equation)
-        ax.set_ylim(bottom=bottom, top=top)
-        ax.set_xlim(left=left, right=right)
+        ax.plot(
+            df["x"],
+            m * df["x"] + b,
+            linestyle="-",
+            color=colour2,
+            label=equation
+        )
+        ax.set_ylim(
+            bottom=bottom,
+            top=top
+        )
+        ax.set_xlim(
+            left=left,
+            right=right
+        )
         ax.set_title(label=f"{axes_title[index-1]}")
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
@@ -52,7 +79,9 @@ def main():
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
-        fname="fig_ax_scatter_ex_07.svg", format="svg", metadata=metadata_dict
+        fname="fig_ax_scatter_ex_07.svg",
+        format="svg",
+        metadata=metadata_dict
     )
 
 
