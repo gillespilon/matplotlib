@@ -2,7 +2,7 @@
 """
 Explore plotting with matplotlib dates
 
-time -f '%e' ./matplotlib_dates.py
+time -f "%e" ./matplotlib_dates.py
 ./matplotlib_dates.py
 
 References
@@ -22,11 +22,16 @@ def main():
     output_url = "matplotlib_figure_axes.html"
     header_title = "matplotlib_figure_axes"
     header_id = "matplotlib-figure-axes"
-    original_stdout = ds.html_begin(
-        output_url=output_url, header_title=header_title, header_id=header_id
-    )
+    colour1 = "#0077bb"
+    colour2 = "#33bbee"
+    colour3 = "#009988"
     ds.style_graph()
     figsize = (8, 6)
+    original_stdout = ds.html_begin(
+        output_url=output_url,
+        header_title=header_title,
+        header_id=header_id
+    )
     metadata_dict = {
         "Creator": "Gilles Pilon",
         "Publisher": "Gilles Pilon",
@@ -34,33 +39,48 @@ def main():
         "Keywords": ["matplotlib", "figure", "axes"],
         "Rights": "Copyright 2020 Gilles Pilon",
     }
-    colour1 = "#0077bb"
-    colour2 = "#33bbee"
-    colour3 = "#009988"
     df = ds.read_file(file_name="weight.csv", parse_dates=["Date"])
     # Single figure, single axes
     fig_title = "Figure title"
     axes_title = "Axes title"
     x_axis_label = "X axis label (units)"
     y_axis_label = "Y axis label (units)"
-    fig, ax = ds.plot_line_x_y(X=df["Date"], y=df["Steps"], figsize=figsize)
-    ax.axhline(y=df["Steps"].median(), xmin=0.05, xmax=0.95, color=colour2)
+    fig, ax = ds.plot_line_x_y(
+        X=df["Date"],
+        y=df["Steps"],
+        figsize=figsize
+    )
+    ax.axhline(
+        y=df["Steps"].median(),
+        xmin=0.05,
+        xmax=0.95,
+        color=colour2
+    )
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
-        t=fig_title, x=middle_titles, horizontalalignment="center",
+        t=fig_title,
+        x=middle_titles,
+        horizontalalignment="center",
         verticalalignment="top"
     )
     ax.set_ylabel(
-        ylabel=y_axis_label, loc="center"
+        ylabel=y_axis_label,
+        loc="center"
     )
     ax.set_xlabel(
-        xlabel=x_axis_label, loc="center"
+        xlabel=x_axis_label,
+        loc="center"
     )
     ax.set_title(
-        label=axes_title, loc="center", horizontalalignment="center",
+        label=axes_title,
+        loc="center",
+        horizontalalignment="center",
         verticalalignment="top"
     )
-    ds.format_dates(fig=fig, ax=ax)
+    ds.format_dates(
+        fig=fig,
+        ax=ax
+    )
     ds.despine(ax=ax)
     fig.savefig(
         fname="single_figure_single_axes.svg", format="svg",
@@ -74,22 +94,32 @@ def main():
     left_y_axis_label = "Left vertical axis (units)"
     right_y_axis_label = "Right vertical axis (units)"
     fig, ax1, ax2 = ds.plot_scatterleft_scatterright_x_y1_y2(
-        X=df["Date"], y1=df["Actual"], y2=df["Steps"], figsize=figsize,
+        X=df["Date"],
+        y1=df["Actual"],
+        y2=df["Steps"],
+        figsize=figsize,
         linestyle2="-"
     )
     middle_titles = (fig.subplotpars.left + fig.subplotpars.right) / 2
     fig.suptitle(
-        t=fig_title, x=middle_titles, horizontalalignment="center",
+        t=fig_title,
+        x=middle_titles,
+        horizontalalignment="center",
         verticalalignment="top"
     )
     ax1.set_title(label=axes_title)
     ax1.set_ylabel(ylabel=left_y_axis_label)
     ax1.set_xlabel(xlabel=x_axis_label)
     ax2.set_ylabel(ylabel=right_y_axis_label)
-    ds.format_dates(fig=fig, ax=ax1)
+    ds.format_dates(
+        fig=fig,
+        ax=ax1
+    )
     fig.savefig(
         fname="single_figure_single_axes_left_y_right_y.svg",
-        bbox_inches="tight", format="svg", metadata=metadata_dict,
+        bbox_inches="tight",
+        format="svg",
+        metadata=metadata_dict,
     )
     ds.html_figure(file_name="single_figure_single_axes_left_y_right_y.svg")
     # Single figure, two axes
@@ -99,16 +129,24 @@ def main():
     for index in range(1, 3):
         ax = fig.add_subplot(1, 2, index)
         ax.plot(
-            df["Date"], df["Steps"], marker="o", linestyle="-", color=colour3
+            df["Date"],
+            df["Steps"],
+            marker="o",
+            linestyle="-",
+            color=colour3
         )
         ax.set_title(label=axes_title[index - 1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
-        ds.format_dates(fig=fig, ax=ax)
+        ds.format_dates(
+            fig=fig,
+            ax=ax
+        )
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
-        fname="single_figure_two_axes.svg", format="svg",
+        fname="single_figure_two_axes.svg",
+        format="svg",
         metadata=metadata_dict
     )
     ds.html_figure(file_name="single_figure_two_axes.svg")
@@ -121,12 +159,34 @@ def main():
     for index in range(1, 5):
         df = eval(f"df{index}")
         ax = fig.add_subplot(2, 2, index)
-        ax.plot(df["x"], df["y"], marker=".", linestyle="", color=colour1)
-        b, m = nppoly.polyfit(df["x"], df["y"], 1)
+        ax.plot(
+            df["x"],
+            df["y"],
+            marker=".",
+            linestyle="",
+            color=colour1
+        )
+        b, m = nppoly.polyfit(
+            x=df["x"],
+            y=df["y"],
+            deg=1
+        )
         equation = f"$y = {b:.1f} + {m:.1f}x$"
-        ax.plot(df["x"], m * df["x"] + b, "-", color=colour2, label=equation)
-        ax.set_ylim(bottom=2, top=14)
-        ax.set_xlim(left=2, right=20)
+        ax.plot(
+            df["x"],
+            m * df["x"] + b,
+            linestyle="-",
+            color=colour2,
+            label=equation
+        )
+        ax.set_ylim(
+            bottom=2,
+            top=14
+        )
+        ax.set_xlim(
+            left=2,
+            right=20
+        )
         ax.set_title(label=axes_title[index - 1])
         ax.set_ylabel(ylabel=y_axis_label)
         ax.set_xlabel(xlabel=x_axis_label)
@@ -134,11 +194,15 @@ def main():
         ds.despine(ax=ax)
     plt.tight_layout(pad=3)
     fig.savefig(
-        fname="single_figure_four_axes.svg", format="svg",
+        fname="single_figure_four_axes.svg",
+        format="svg",
         metadata=metadata_dict
     )
     ds.html_figure(file_name="single_figure_four_axes.svg")
-    ds.html_end(original_stdout=original_stdout, output_url=output_url)
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=output_url
+    )
 
 
 def create_dataframe() -> Tuple[pd.DataFrame]:
