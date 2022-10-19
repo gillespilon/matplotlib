@@ -1,3 +1,3 @@
 # Python—Matplotlib
 
-TBD
+Examples of Matplotlib graphs and code.
