@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-List the matplotlib.rcParams.keys().
+List the matplotlib.rcParams.keys()
 """
 
 from pathlib import Path
@@ -23,9 +23,15 @@ def main():
         action="started at"
     )
     print(rc.keys())
-    ds.script_summary(script_path=Path(__file__), action="finished at")
-    ds.html_end(original_stdout=original_stdout, output_url=output_url)
+    ds.script_summary(
+        script_path=Path(__file__),
+        action="finished at"
+    )
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=output_url
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
