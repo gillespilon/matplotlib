@@ -131,11 +131,7 @@ def main():
     fig = plt.figure(figsize=figsize)
     fig.suptitle(t=fig_title)
     for index in range(1, 3):
-        ax = fig.add_subplot(
-            nrows=1,
-            ncols=2,
-            index=index
-        )
+        ax = fig.add_subplot(1, 2, index)
         ax.plot(
             df["Date"],
             df["Steps"],
@@ -166,11 +162,7 @@ def main():
     fig.suptitle(t=fig_title)
     for index in range(1, 5):
         df = eval(f"df{index}")
-        ax = fig.add_subplot(
-            nrows=2,
-            ncols=2,
-            index=index
-        )
+        ax = fig.add_subplot(2, 2, index)
         ax.plot(
             df["x"],
             df["y"],
