@@ -39,7 +39,10 @@ def main():
         "Keywords": ["matplotlib", "figure", "axes"],
         "Rights": "Copyright 2020 Gilles Pilon",
     }
-    df = ds.read_file(file_name="weight.csv", parse_dates=["Date"])
+    df = ds.read_file(
+        file_name="weight.csv",
+        parse_dates=["Date"]
+    )
     # Single figure, single axes
     fig_title = "Figure title"
     axes_title = "Axes title"
@@ -83,7 +86,8 @@ def main():
     )
     ds.despine(ax=ax)
     fig.savefig(
-        fname="single_figure_single_axes.svg", format="svg",
+        fname="single_figure_single_axes.svg",
+        format="svg",
         metadata=metadata_dict
     )
     ds.html_figure(file_name="single_figure_single_axes.svg")
