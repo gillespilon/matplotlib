@@ -6,7 +6,8 @@ Requirements
 - Series must be > 0
 
 Reference
-https://www.itl.nist.gov/div898/handbook/eda/section3/eda336.htm
+- https://www.itl.nist.gov/div898/handbook/eda/section3/eda336.htm
+- https://www.itl.nist.gov/div898/handbook/eda/section3/boxcox.htm
 """
 
 from pathlib import Path
