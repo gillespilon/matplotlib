@@ -8,6 +8,9 @@ Mathematical outputs:
     slope of the least-squares fit line
     intercept of the least-squares fit line
     r is the square root of the coefficient of determination
+
+References:
+- https://www.itl.nist.gov/div898/handbook/eda/section3/normprpl.htm
 """
 
 from pathlib import Path
