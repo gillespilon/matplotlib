@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-Explore plotting with matplotlib dates
+Explore plotting with matplotlib figure, axes
 
 time -f "%e" ./matplotlib_dates.py
 ./matplotlib_dates.py
